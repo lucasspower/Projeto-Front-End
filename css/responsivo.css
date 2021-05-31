@@ -1,0 +1,155 @@
+/* Estilizacao responsivo */
+@media screen and (max-width: 875px) {
+  .phones,
+  .cabecalho {
+    padding: 5px;
+  }
+  #main {
+    margin-top: 10%;
+    padding: 0px 5px;
+  }
+  .box-main .grid-box {
+    flex-wrap: wrap;
+  }
+  .box-main .box-item {
+    margin: 10px 5px;
+  }
+  .menu {
+    flex-wrap: wrap;
+  }
+  .menu > li {
+    margin: 10px 20px 0;
+  }
+  .menu-footer {
+    justify-content: center;
+  }
+  .menu-footer li {
+    margin: 10px 15px !important;
+  }
+  .submenu1 {
+    padding-top: 23%;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .cabecalho {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cabecalho .logo-header {
+    margin-bottom: 20px;
+  }
+  #main {
+    display: block;
+    margin-top: 5%;
+  }
+  .img-container-main {
+    margin: 20px auto 30px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #main {
+    display: block;
+    text-align: center;
+  }
+  .cabecalho {
+    flex-direction: row;
+  }
+  .menu-header {
+    display: none;
+  }
+  .menu-mobile {
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  .menu li a {
+    color: #ffffff;
+  }
+  .btn-menu-mobile {
+    display: block;
+    width: 20px;
+    border-top: 3px solid #020085;
+  }
+  .btn-menu-mobile::before,
+  .btn-menu-mobile::after {
+    content: "";
+    display: block;
+    border-top: none;
+    width: 20px;
+    left: 0;
+    height: 3px;
+    margin-top: 5px;
+    background-color: #020085;
+  }
+  .btn-menu-mobile.ativo::before {
+    position: relative;
+    animation: bntMenuAtivo 0.15s linear forwards;
+    -webkit-animation: bntMenuAtivo 0.15s linear forwards;
+  }
+
+  .submenu li {
+    background-color: #3b3b3bea;
+  }
+  .menu-header.ativo {
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 100px;
+    padding-bottom: 5px;
+    background-color: #020085;
+    z-index: 10;
+    animation: animaMenu 0.3s forwards;
+    -webkit-animation: animaMenu 0.3s forwards;
+  }
+  .submenu2 {
+    top: 0;
+    left: -100%;
+    animation: animaLeftMobile 0.15s linear forwards;
+    -webkit-animation: animaLeftMobile 0.15s linear forwards;
+  }
+  .submenu1 {
+    left: 54%;
+    padding-top: 5px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .box-main .grid-box {
+    display: block;
+  }
+  .box-main .box-item {
+    margin: 10px auto 30px;
+  }
+}
+
+@keyframes animaMenu {
+  from {
+    opacity: 0;
+    right: 20px;
+  }
+  to {
+    opacity: 1;
+    right: 0;
+  }
+}
+@keyframes animaLeftMobile {
+  from {
+    opacity: 0;
+    left: 80%;
+  }
+  to {
+    opacity: 1;
+    left: -100%;
+  }
+}
+@keyframes bntMenuAtivo {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -5px;
+  }
+}
